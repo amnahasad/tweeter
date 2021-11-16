@@ -1,0 +1,10 @@
+.header-profile {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    height: 400px;
+    width: 100%;
+    background-color: palevioletred;
+    background-image: url("../images/asfalt-light.png");
+}

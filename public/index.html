@@ -18,6 +18,7 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -29,7 +30,7 @@
 <body>
   <!-- Top nav bar (fixed) -->
 
-  <nav>
+  <nav class="nav-css">
   <div class="nav-words">
     <span class="logo-font">tweeter</span>
     <div class="tweet-arrow">
@@ -37,9 +38,17 @@
     <span><i class="fas fa-angle-double-down arrow-icon"></i></span>
   </div>
   </div>
-  
   </nav>
 
+  <header class="header-profile">
+    <div>
+        <img src="/images/profile-hex.png"> 
+    </div>
+    <br>
+    <div>
+        <h2>Amnah Asad</h2>
+    </div>
+  </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container"></main>
