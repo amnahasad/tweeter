@@ -1,0 +1,27 @@
+nav {
+    color: #FFFFFF;
+    background-color: #4056A1;
+    height: 120px;
+    width: 100vw;
+  }
+
+.nav-words {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em;
+}
+.logo-font {
+    font-family: "Bungee";
+}
+
+.arrow-icon {
+    display: flex;
+    color: red;
+
+}
+
+.tweet-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
