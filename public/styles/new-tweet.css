@@ -1,0 +1,25 @@
+.button {
+    background-color: rgb(68, 0, 255);
+    color: white;
+    font-family: "Bungee";
+    border: none;
+    padding: 5px 10px;
+}
+
+.counter {
+    font-family: "Bungee";
+}
+
+
+
+.button_counter {
+    display: flex;
+    justify-content: space-between;
+ }
+
+#tweet-text {
+    width: 100%;
+    background-color: #f4f1ec;
+    border: none;
+    border-bottom: 2px solid;
+}

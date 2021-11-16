@@ -26,9 +26,6 @@ body {
  */
 
  .container {
-  display: flex;
-  justify-content:center;
-  align-items:center;
   margin: 0 5%;
   background-color: #f4f1ec;
  }
