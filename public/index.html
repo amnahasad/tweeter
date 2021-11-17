@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweets-container.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -63,6 +64,30 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+
+    <section class="tweets-container">
+      <article class="tweet">
+        <header class="article-header">
+          <div class="avatar_img">
+            <img src="https://i.imgur.com/73hZDYK.png"/>
+            <p>Newton</p>
+          </div>
+          <p class="username">@SirIsaac</p>
+        </header>
+        <div class="user-tweet">
+          <p>If I have seen further it is by standing on the shoulders of giants</p>
+        </div>
+        <div class="horizontal-line"></div>
+        <footer class="article-footer">
+          <p class="days-ago">10 days ago</p>
+          <div class="symbols">
+            <i class="fas fa-flag flag"></i>
+            <i class="fas fa-retweet retweet"></i>
+            <i class="fas fa-heart heart-likes"></i>
+          </div>
+        </footer>
+      </article>
     </section>
   </main>
 </body>

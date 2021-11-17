@@ -4,13 +4,21 @@
     font-family: "Bungee";
     border: none;
     padding: 5px 10px;
+    margin-bottom: 7px;
+}
+
+.avatar_img {
+    display: flex;
+    padding: 10px;
+}
+
+.avatar_img img {
+    margin-right: 5px;
 }
 
 .counter {
     font-family: "Bungee";
 }
-
-
 
 .button_counter {
     display: flex;
