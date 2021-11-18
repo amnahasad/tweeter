@@ -14,9 +14,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
     rel="stylesheet">
-    
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css"
+    integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -26,8 +28,10 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -37,22 +41,22 @@
   <!-- Top nav bar (fixed) -->
 
   <nav class="nav-css">
-  <div class="nav-words">
-    <span class="logo-font">tweeter</span>
-    <div class="tweet-arrow">
-    <span><strong>Write</strong> a new Tweet</span>
-    <span><i class="fas fa-angle-double-down arrow-icon"></i></span>
-  </div>
-  </div>
+    <div class="nav-words">
+      <span class="logo-font">tweeter</span>
+      <div class="tweet-arrow">
+        <span><strong>Write</strong> a new Tweet</span>
+        <span><i class="fas fa-angle-double-down arrow-icon"></i></span>
+      </div>
+    </div>
   </nav>
 
   <header class="header-profile">
     <div>
-        <img src="/images/profile-hex.png"> 
+      <img src="/images/profile-hex.png">
     </div>
     <br>
     <div>
-        <h2>Amnah Asad</h2>
+      <h2>Amnah Asad</h2>
     </div>
   </header>
 
@@ -60,7 +64,7 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form class="label-form" action="/tweets" method="POST">
+      <form class="label-form" action="/tweets" method="POST" id="label-form">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div class="button_counter">
           <button class="button" type="submit">Tweet</button>
@@ -73,4 +77,5 @@
     </section>
   </main>
 </body>
+
 </html>
