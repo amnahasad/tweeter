@@ -9,10 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
 
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
     rel="stylesheet">
+    
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- App CSS -->
@@ -24,7 +26,8 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -66,28 +69,7 @@
       </form>
     </section>
 
-    <section class="tweets-container">
-      <article class="tweet">
-        <header class="article-header">
-          <div class="avatar_img">
-            <img src="https://i.imgur.com/73hZDYK.png"/>
-            <p>Newton</p>
-          </div>
-          <p class="username">@SirIsaac</p>
-        </header>
-        <div class="user-tweet">
-          <p>If I have seen further it is by standing on the shoulders of giants</p>
-        </div>
-        <div class="horizontal-line"></div>
-        <footer class="article-footer">
-          <p class="days-ago">10 days ago</p>
-          <div class="symbols">
-            <i class="fas fa-flag flag"></i>
-            <i class="fas fa-retweet retweet"></i>
-            <i class="fas fa-heart heart-likes"></i>
-          </div>
-        </footer>
-      </article>
+    <section class="tweets-container" id="tweets-container">
     </section>
   </main>
 </body>
