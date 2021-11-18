@@ -44,6 +44,14 @@ $(document).ready(function () {
     };
 
     $('#label-form').on('submit', function(event) {
+        const tweetLength = $('#tweet-text').val().length;
+
+        if (tweetLength === 0) {
+            alert('Error, please enter a valid input');
+        }
+        if (tweetLength > 140) {
+            alert('Error, you have exceeded the 140 character limit!');
+        }
         event.preventDefault();
         tweet = $(this).serialize();
 
@@ -62,6 +70,7 @@ $(document).ready(function () {
     })
 
     const loadTweets = () => {
+        
         $.ajax('/tweets', {method: 'GET'})
         .then((tweets) => {
             renderTweets(tweets);
@@ -72,4 +81,6 @@ $(document).ready(function () {
     };
 
     loadTweets();
+
+
 });
