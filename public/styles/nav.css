@@ -5,6 +5,7 @@ nav {
     width: 100vw;
   }
 
+
 .nav-words {
     display: flex;
     justify-content: space-between;
@@ -29,5 +30,6 @@ nav {
 
 .nav-css {
     z-index: 1;
-    position:relative;
+    position:fixed;
+    width: 100%;
 }
