@@ -1,8 +1,7 @@
 //this file is responsible for the character counter
 
-$(document).ready(function() {
-    $('#tweet-text').on('input', function() {
-        // console.log(this);
+$(document).ready(function () {
+    $('#tweet-text').on('input', function () {
         let inputLength = $(this).val().length;
         let counter = $('.counter');
         counter.val(140 - inputLength);
@@ -13,5 +12,5 @@ $(document).ready(function() {
             counter.css('color', 'black');
         }
     });
-  });
-        
+});
+

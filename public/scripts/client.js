@@ -6,7 +6,7 @@
 
 
 const createTweetElement = function (tweetData) {
-console.log(tweetData);
+    console.log(tweetData);
     const escape = function (str) {
         let div = document.createElement("div");
         div.appendChild(document.createTextNode(str));
@@ -75,25 +75,19 @@ $(document).ready(function () {
         const tweetLength = $('#tweet-text').val().length;
 
         if (!tweetLength) {
-            $message.text('Error, please enter a valid input').slideDown(600);
+            $message.text('❗ Error, please enter 1 to 140 characters to tweet ❗').slideDown(600);
         }
         else if (tweetLength > 140) {
-            $message.text('Error, you have exceeded the 140 character limit!').slideDown(600);
+            $message.text('❗ Error, you have exceeded the 140 character limit! ❗').slideDown(600);
         }
 
 
         else {
-
-            // event.preventDefault();
-            // tweet = $(this).serialize();
-
             $.ajax({
                 type: 'POST',
                 url: '/tweets',
                 data: $(this).serialize(),
                 success: function (tweet) {
-                    // console.log("This is inside the successs---------", tweet);
-                    // loadTweets();
                     $('textarea').val('');
                     $('.counter').val(140);
                     $.get('http://localhost:8080/tweets', (data) => {
@@ -108,33 +102,5 @@ $(document).ready(function () {
             })
 
         }
-        // else {
-        //     $.post('/tweets', $form.serialize())
-        //         .then(data => {
-        //             $('textarea').val('');
-        //             $('.counter').val(140);
-        //             let newTweet = createTweetElement(data);
-
-        //             console.log('This is a testtttt--------', $tweetContainer);
-        //             // $('.tweets-container').prepend(newTweet);
-        //             $('#tweets-container').prepend(newTweet).fadeIn();
-
-        //             // $('textarea').val('');
-        //             // $('.counter').val(140);
-        //         })
-        // }
     })
-
-    // const loadTweets = () => {
-
-    //     $.ajax('/tweets', { method: 'GET' })
-    //         .then((tweets) => {
-    //             renderTweets(tweets);
-    //         })
-    //         .fail((err) => {
-    //             console.log(err);
-    //         })
-    // };
-
-    // loadTweets();
 });
