@@ -7,8 +7,14 @@
 
 $(document).ready(function () {
 
-    
+
     const createTweetElement = function (tweetData) {
+
+        const escape = function (str) {
+            let div = document.createElement("div");
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        };
 
         return `<article class="tweet">
     <header class="article-header">
@@ -19,7 +25,7 @@ $(document).ready(function () {
       <p>${tweetData["user"]["handle"]}</p>
     </header>
     <div class="user-tweet">
-      <p>${tweetData["content"]["text"]}</p>
+      <p>${escape(tweetData["content"]["text"])}</p>
     </div>
     <div class="horizontal-line"></div>
     <footer class="article-footer">
@@ -43,7 +49,7 @@ $(document).ready(function () {
         }
     };
 
-    $('#label-form').on('submit', function(event) {
+    $('#label-form').on('submit', function (event) {
         const tweetLength = $('#tweet-text').val().length;
 
         if (tweetLength === 0) {
@@ -59,25 +65,25 @@ $(document).ready(function () {
             type: 'POST',
             url: '/tweets',
             data: tweet,
-            success: function(tweet) {
+            success: function (tweet) {
                 console.log(tweet);
                 loadTweets();
-            }, 
-            error: function(err) {
+            },
+            error: function (err) {
                 console.log(err);
             }
         })
     })
 
     const loadTweets = () => {
-        
-        $.ajax('/tweets', {method: 'GET'})
-        .then((tweets) => {
-            renderTweets(tweets);
-        })
-        .fail((err) => {
-            console.log(err);
-        })
+
+        $.ajax('/tweets', { method: 'GET' })
+            .then((tweets) => {
+                renderTweets(tweets);
+            })
+            .fail((err) => {
+                console.log(err);
+            })
     };
 
     loadTweets();
