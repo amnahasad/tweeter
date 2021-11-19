@@ -32,3 +32,11 @@
     border-bottom: 2px solid;
     margin-top: 35px;
 }
+
+/* span {
+    border: 3px solid red;
+} */
+.error-message {
+    margin-top: 10%;
+    padding: 2%;
+}

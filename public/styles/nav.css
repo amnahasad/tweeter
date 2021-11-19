@@ -33,3 +33,17 @@ nav {
     position:fixed;
     width: 100%;
 }
+
+@keyframes arrow-motion {
+    from {
+        transform: translate3d(0, -5px, 0);
+    } 
+    to {
+        transform: translate3d(0, 5px, 0);
+    }
+}
+.arrow-icon:hover {
+    animation: arrow-motion 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}

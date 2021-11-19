@@ -2,8 +2,7 @@
 
 $(document).ready(function() {
     $('#tweet-text').on('input', function() {
-
-        console.log(this);
+        // console.log(this);
         let inputLength = $(this).val().length;
         let counter = $('.counter');
         counter.val(140 - inputLength);

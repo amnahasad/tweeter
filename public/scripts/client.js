@@ -5,88 +5,136 @@
  */
 
 
-$(document).ready(function () {
+const createTweetElement = function (tweetData) {
+console.log(tweetData);
+    const escape = function (str) {
+        let div = document.createElement("div");
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    };
 
-
-    const createTweetElement = function (tweetData) {
-
-        const escape = function (str) {
-            let div = document.createElement("div");
-            div.appendChild(document.createTextNode(str));
-            return div.innerHTML;
-        };
-
-        return `<article class="tweet">
+    const $tweet = $(`<article class="tweet">
     <header class="article-header">
       <div class="avatar_img">
-        <img src="${tweetData["user"]["avatars"]}"/>
-        <p>${tweetData["user"]["name"]}</p>
+        <img src=${tweetData.user.avatars}/>
+        <p>${tweetData.user.name}</p>
       </div>
-      <p>${tweetData["user"]["handle"]}</p>
+      <p>${tweetData.user.handle}</p>
     </header>
     <div class="user-tweet">
-      <p>${escape(tweetData["content"]["text"])}</p>
+      <p>${escape(tweetData.content.text)}</p>
     </div>
     <div class="horizontal-line"></div>
     <footer class="article-footer">
-      <p class="days-ago">${timeago.format(tweetData["created_at"])}</p>
+      <p class="days-ago">${timeago.format(tweetData.created_at)}</p>
       <div class="symbols">
         <i class="fas fa-flag flag"></i>
         <i class="fas fa-retweet retweet"></i>
         <i class="fas fa-heart heart-likes"></i>
       </div>
     </footer>
-  </article>`
+    </article>`
+    );
 
-    };
+    return $tweet;
+};
 
-    const renderTweets = function (tweets) {
+const renderTweets = function (tweets) {
 
-        const tweetContainer = $('#tweets-container');
+    const tweetContainer = $('#tweets-container');
 
-        for (let tweet of tweets) {
-            tweetContainer.prepend(createTweetElement(tweet));
-        }
-    };
+    for (let tweet of tweets) {
+        tweetContainer.prepend(createTweetElement(tweet));
+    }
+};
 
-    $('#label-form').on('submit', function (event) {
+const loadTweets = function () {
+    $.get('/tweets', function (data) {
+        renderTweets(data);
+    })
+};
+
+$(document).ready(function () {
+
+    const $tweetContainer = $('#tweets-container');
+
+    const $message = $('.error-message span');
+    loadTweets();
+    $message.hide();
+
+
+    $('#label-form').submit(function (event) {
+
+        event.preventDefault();
+        const $form = $(this);
+        const $tweetText = $form.find('textarea');
+        $tweetText.on("input", () => {
+            $message.fadeOut(500);
+        });
+
         const tweetLength = $('#tweet-text').val().length;
 
-        if (tweetLength === 0) {
-            alert('Error, please enter a valid input');
+        if (!tweetLength) {
+            $message.text('Error, please enter a valid input').slideDown(600);
         }
-        if (tweetLength > 140) {
-            alert('Error, you have exceeded the 140 character limit!');
+        else if (tweetLength > 140) {
+            $message.text('Error, you have exceeded the 140 character limit!').slideDown(600);
         }
-        event.preventDefault();
-        tweet = $(this).serialize();
 
-        $.ajax({
-            type: 'POST',
-            url: '/tweets',
-            data: tweet,
-            success: function (tweet) {
-                console.log(tweet);
-                loadTweets();
-            },
-            error: function (err) {
-                console.log(err);
-            }
-        })
+
+        else {
+
+            // event.preventDefault();
+            // tweet = $(this).serialize();
+
+            $.ajax({
+                type: 'POST',
+                url: '/tweets',
+                data: $(this).serialize(),
+                success: function (tweet) {
+                    // console.log("This is inside the successs---------", tweet);
+                    // loadTweets();
+                    $('textarea').val('');
+                    $('.counter').val(140);
+                    $.get('http://localhost:8080/tweets', (data) => {
+                        const newTweet = data.slice(-1).pop();
+                        const newTweetElement = createTweetElement(newTweet);
+                        $('#tweets-container').prepend(newTweetElement);
+                    })
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            })
+
+        }
+        // else {
+        //     $.post('/tweets', $form.serialize())
+        //         .then(data => {
+        //             $('textarea').val('');
+        //             $('.counter').val(140);
+        //             let newTweet = createTweetElement(data);
+
+        //             console.log('This is a testtttt--------', $tweetContainer);
+        //             // $('.tweets-container').prepend(newTweet);
+        //             $('#tweets-container').prepend(newTweet).fadeIn();
+
+        //             // $('textarea').val('');
+        //             // $('.counter').val(140);
+        //         })
+        // }
     })
 
-    const loadTweets = () => {
+    // const loadTweets = () => {
 
-        $.ajax('/tweets', { method: 'GET' })
-            .then((tweets) => {
-                renderTweets(tweets);
-            })
-            .fail((err) => {
-                console.log(err);
-            })
-    };
+    //     $.ajax('/tweets', { method: 'GET' })
+    //         .then((tweets) => {
+    //             renderTweets(tweets);
+    //         })
+    //         .fail((err) => {
+    //             console.log(err);
+    //         })
+    // };
 
-    loadTweets();
-
-
+    // loadTweets();
 });
