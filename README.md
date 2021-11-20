@@ -20,6 +20,6 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of tweet box"] (https://github.com/amnahasad/tweeter/blob/master/docs/tweet-box.png)
-!["Screenshot of validation message with going over 140 character limit"] (https://github.com/amnahasad/tweeter/blob/master/docs/tweet-error-handling-1.png)
-!["Screenshot of validation message for entering an empty string"] (https://github.com/amnahasad/tweeter/blob/master/docs/tweet-error-handling-2.png)
+!["Screenshot of tweet box"] (https://github.com/amnahasad/tweeter/blob/master/docs/tweet-box.png?raw=true)
+!["Screenshot of validation message with going over 140 character limit"] (https://github.com/amnahasad/tweeter/blob/master/docs/tweet-error-handling-1.png?raw=true)
+!["Screenshot of validation message for entering an empty string"] (https://github.com/amnahasad/tweeter/blob/master/docs/tweet-error-handling-2.png?raw=true)
