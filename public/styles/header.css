@@ -3,10 +3,15 @@
     justify-content:center;
     align-items:center;
     flex-direction: column;
-    height: 400px;
+    height: 520px;
     width: 100%;
     background-color: palevioletred;
     background-image: url("../images/asfalt-light.png");
-    position: relative;
+    /* position: relative; */
     top: 120px;
+}
+
+
+.image-container {
+    margin-top: 100px;
 }

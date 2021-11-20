@@ -14,18 +14,26 @@ html {
  * Global layout stuff
  */
 
-body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: "Source Sans Pro", "sans-serif";
-}
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
- .container {
-  margin: 0 5%;
-  background-color: #f4f1ec;
+ @media only screen and (min-width: 1024px) {
+   
+  body {
+    width: 100%;
+    color: #545149;
+    background-color: #f4f1ec;
+    font-size: 24px;
+    font-family: "Source Sans Pro", "sans-serif";
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /*
+   * Additional CSS can be defined below or in other CSS files, as per instructions
+   */
+   @media (min-width: 800px) {
+   .container {
+    margin: 10% 5%;
+    background-color: #f4f1ec;
+    width: 800px;
+   }
+  }
  }

@@ -33,9 +33,16 @@
     margin-top: 35px;
 }
 
+.label-form {
+    background-color: #f4f1ec;
+}
 
 .error-message {
-    margin-top: 10%;
-    padding: 2%;
+    /* margin-top: 10%; */
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-right: 3%;
+    padding-left: 3%;
     color: red;
+    background-color: #f4f1ec;
 }
