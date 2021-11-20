@@ -6,7 +6,6 @@
 
 
 const createTweetElement = function (tweetData) {
-    console.log(tweetData);
     const escape = function (str) {
         let div = document.createElement("div");
         div.appendChild(document.createTextNode(str));
@@ -35,7 +34,6 @@ const createTweetElement = function (tweetData) {
     </footer>
     </article>`
     );
-
     return $tweet;
 };
 
@@ -100,7 +98,6 @@ $(document).ready(function () {
                     console.log(err);
                 }
             })
-
         }
     })
 });
